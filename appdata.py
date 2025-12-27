@@ -1,12 +1,13 @@
 
-[
+# apps_data.py
+
+apps_data = [
     {
         "id": 1,
         "app_name": "SummarizePro",
-        "category": "NLP",
         "size_mb": 85.4,
-        "is_paid": false,
-        "price": null,
+        "is_paid": False,
+        "price": None,
         "version": "1.0.3",
         "status": "active",
         "avg_rating": 0.0,
@@ -20,9 +21,8 @@
     {
         "id": 2,
         "app_name": "ChatGPT",
-        "category": "NLP",
         "size_mb": 120.5,
-        "is_paid": true,
+        "is_paid": True,
         "price": 20.0,
         "version": "v5.0",
         "status": "active",
@@ -37,9 +37,8 @@
     {
         "id": 3,
         "app_name": "Gemini",
-        "category": "Multimodal AI",
         "size_mb": 115.2,
-        "is_paid": true,
+        "is_paid": True,
         "price": 19.99,
         "version": "v2.0",
         "status": "active",
@@ -54,9 +53,8 @@
     {
         "id": 4,
         "app_name": "Microsoft Copilot",
-        "category": "Productivity",
         "size_mb": 98.8,
-        "is_paid": true,
+        "is_paid": True,
         "price": 30.0,
         "version": "v2025.12",
         "status": "active",
@@ -71,9 +69,8 @@
     {
         "id": 5,
         "app_name": "Claude",
-        "category": "NLP",
         "size_mb": 110.0,
-        "is_paid": true,
+        "is_paid": True,
         "price": 20.0,
         "version": "v3.5",
         "status": "active",
@@ -82,3 +79,55 @@
         "trust_score": 93.0,
         "mostly_used_score": 86.0,
         "date_of_creation": "2023-03-14T00:00:00Z",
+        "updated_at": "2025-12-20T10:30:00Z",
+        "description": "Anthropic's helpful, harmless, honest assistant"
+    },
+    {
+        "id": 6,
+        "app_name": "Perplexity AI",
+        "size_mb": 90.3,
+        "is_paid": True,
+        "price": 20.0,
+        "version": "v2025.12",
+        "status": "active",
+        "avg_rating": 4.7,
+        "rating_count": 420000,
+        "trust_score": 94.0,
+        "mostly_used_score": 87.0,
+        "date_of_creation": "2022-08-01T00:00:00Z",
+        "updated_at": "2025-12-20T10:30:00Z",
+        "description": "Answer engine with citations and web access"
+    },
+    {
+        "id": 7,
+        "app_name": "Copy.ai",
+        "size_mb": 75.0,
+        "is_paid": True,
+        "price": 49.0,
+        "version": "v2025.11",
+        "status": "active",
+        "avg_rating": 4.3,
+        "rating_count": 150000,
+        "trust_score": 85.0,
+        "mostly_used_score": 78.0,
+        "date_of_creation": "2020-03-01T00:00:00Z",
+        "updated_at": "2025-12-20T10:30:00Z",
+        "description": "AI content generator for marketing and sales"
+    },
+    {
+        "id": 8,
+        "app_name": "Canva AI",
+        "size_mb": 200.0,
+        "is_paid": True,
+        "price": 12.99,
+        "version": "v2025.10",
+        "status": "active",
+        "avg_rating": 4.4,
+        "rating_count": 800000,
+        "trust_score": 88.0,
+        "mostly_used_score": 84.0,
+        "date_of_creation": "2023-09-14T00:00:00Z",
+        "updated_at": "2025-12-20T10:30:00Z",
+        "description": "AI-powered design features: text-to-image, magic write, and more"
+    }
+]
