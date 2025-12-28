@@ -34,7 +34,7 @@ def get_db():
 # AUTHENTICATION
 # -------------------------------------------------
 
-@app.post("/admin/login")
+@app.post("/admin/login",tags=["Admin - Auth"])
 def admin_login(
     form_data: OAuth2PasswordRequestForm = Depends()
 ):
@@ -57,7 +57,7 @@ def admin_login(
 # USER APIs
 # -------------------------------------------------
 
-@app.get("/tools", response_model=list[schemas.ToolResponse])
+@app.get("/tools", response_model=list[schemas.ToolResponse],tags=["User - Tools"])
 def get_tools(
     category: str | None = None,
     pricing: str | None = None,
@@ -70,7 +70,7 @@ def get_tools(
     return crud.filter_tools(db, category, pricing, min_rating)
 
 
-@app.post("/review", response_model=schemas.ReviewResponse)
+@app.post("/review", response_model=schemas.ReviewResponse , tags=["User - Reviews"])
 def submit_review(
     review: schemas.ReviewCreate,
     db: Session = Depends(get_db)
@@ -93,7 +93,7 @@ def submit_review(
 # ADMIN APIs (PROTECTED)
 # -------------------------------------------------
 
-@app.post("/admin/tool", response_model=schemas.ToolResponse)
+@app.post("/admin/tool", response_model=schemas.ToolResponse , tags=["Admin - Tools"])
 def add_tool(
     tool: schemas.ToolCreate,
     db: Session = Depends(get_db),
@@ -109,7 +109,7 @@ def add_tool(
     return new_tool
 
 
-@app.put("/admin/tool/{tool_id}")
+@app.put("/admin/tool/{tool_id}",tags=["Admin - Tools"])
 def update_tool(
     tool_id: int,
     tool: schemas.ToolCreate,
@@ -130,7 +130,7 @@ def update_tool(
     return {"message": "Tool updated successfully"}
 
 
-@app.delete("/admin/tool/{tool_id}")
+@app.delete("/admin/tool/{tool_id}",tags=["Admin - Tools"])
 def delete_tool(
     tool_id: int,
     db: Session = Depends(get_db),
@@ -148,7 +148,7 @@ def delete_tool(
     return {"message": "Tool deleted successfully"}
 
 
-@app.put("/admin/review/{review_id}/{status}")
+@app.put("/admin/review/{review_id}/{status}",tags=["Admin - Reviews"])
 def moderate_review(
     review_id: int,
     status: str,
@@ -174,7 +174,7 @@ def moderate_review(
 
     return {"message": f"Review {status} successfully"}
 
-@app.get("/admin/reviews")
+@app.get("/admin/reviews",tags=["Admin - Reviews"])
 def view_reviews(
     db: Session = Depends(get_db),
     admin=Depends(get_current_admin)
